@@ -16,25 +16,15 @@ namespace wireless.Server.Components {
 
         protected override void DoLogicUpdate() {
             AddConnections();
-            RemoveConnections();
-            //PrintArray();
-            Connections.OldWirelessConnections = Connections.WirelessConnections;
+            if (base.Inputs[0].On) {
+                PrintArray();
+            }
+
             base.QueueLogicUpdate();
         }
         void PrintArray() {
             for (int i = 0; i < Connections.WirelessConnections.Length; i++) { 
-                Logger.Info(i.ToString() + "\n" + (Connections.WirelessConnections[i][0] == null ? true : false).ToString() + "\n" + (Connections.WirelessConnections[i][1] == null ? true : false).ToString());
-            }
-        }
-        void RemoveConnections() {
-            // Iterate through 1st layer
-            for (int i = 0; i < Connections.WirelessConnections.Length; i++) {
-                // Inputs
-                for (int k = 4; k < 8; k++) {
-                    try {
-                        Connections.WirelessConnections[i][0].Inputs[k].RemovePhasicLinkWithUnsafe(Connections.WirelessConnections[i][1].Inputs[k]);
-                    } catch {}
-                }
+                Logger.Info(i.ToString() + " : " + (Connections.WirelessConnections[i][0] == null ? true : false).ToString() + " : " + (Connections.WirelessConnections[i][1] == null ? true : false).ToString());
             }
         }
         void AddConnections() {
@@ -42,9 +32,14 @@ namespace wireless.Server.Components {
             for (int i = 0; i < Connections.WirelessConnections.Length; i++) {
                 for (int k = 4; k < 8; k++) {
                     try {
-                        Connections.WirelessConnections[i][0].Inputs[k].AddPhasicLinkWithUnsafe(Connections.WirelessConnections[i][1].Inputs[k]);
+                        Connections.WirelessConnections[i][0].Inputs[k].AddSecretLinkWith(Connections.WirelessConnections[i][1].Inputs[k]);
+                        if (base.Inputs[1].On) {
+                            Logger.Info("added: " + i.ToString());
+                        }
                     } catch {
-                        Logger.Info(i.ToString() + "\n" + (Connections.WirelessConnections[i][0] == null ? true : false).ToString() + "\n" + (Connections.WirelessConnections[i][1] == null ? true : false).ToString());
+                         if (base.Inputs[1].On) {
+                            Logger.Info("failed: " + i.ToString());
+                        }
                     }
                 }
             }

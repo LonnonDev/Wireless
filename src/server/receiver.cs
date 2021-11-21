@@ -8,7 +8,7 @@ using wireless.Server;
 
 namespace wireless.Server.Components {
     public class receiver : LogicComponent {
-        private int OldAddress = 0;
+        private int OldAddress = 1;
         protected override void DoLogicUpdate() {
             int Address = 0;
             for (int i = 0; i <= 3; i++) {
@@ -16,9 +16,11 @@ namespace wireless.Server.Components {
                 Address += On * (int)Math.Pow(2, i);  
             }
             Logger.Info(Address.ToString());
-            Connections.WirelessConnections[OldAddress][1] = this;
-            Connections.WirelessConnections[Address][1] = null;
-            OldAddress = Address;
+            if (OldAddress != Address) {
+                Connections.WirelessConnections[OldAddress][1] = null;
+                Connections.WirelessConnections[Address][1] = this;
+                OldAddress = Address;
+            }
         }
     }
 }

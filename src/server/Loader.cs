@@ -1,6 +1,11 @@
 using LogicAPI.Server.Components;
 using LogicAPI.Server;
 using LogicLog;
+using System;
+using LogicWorld.Server.Circuitry;
+using wireless.Server.Components;
+using wireless.Server;
+
 
 namespace wireless.Server
 {
@@ -11,6 +16,5 @@ namespace wireless.Server
     }
     public static class Connections {
         public static LogicComponent[][] WirelessConnections = new LogicComponent[16][];
-        public static LogicComponent[][] OldWirelessConnections = new LogicComponent[16][];
     }
 }
