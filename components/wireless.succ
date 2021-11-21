@@ -1,0 +1,73 @@
+Transmitter:
+    column: "Transmitters/Recievers"
+    prefab:
+        blocks:
+            -
+                scale: (4, 2, 1)
+                position: (0.5, 0, 0)
+                color: 5e5eff
+        inputs:
+            -
+                position: (-1, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (0, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (1, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (2, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (1, 1.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (2, 1.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (-1, 1.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (0, 1.5, -0.5)
+                rotation: (-90, 0, 0)
+    logicCode: wireless.Server.Components.transmitter
+
+Reciever:
+    column: "Transmitters/Recievers"
+    prefab:
+        blocks:
+            -
+                scale: (4, 1, 1)
+                position: (0.5, 0, 0)
+                color: 5e5eff
+        inputs:
+            -
+                position: (-1, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (0, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (1, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (2, 0.5, -0.5)
+                rotation: (-90, 0, 0)
+            -
+                position: (1, 0.5, 0.5)
+                rotation: (90, 0, 0)
+                length: 0.3
+            -
+                position: (2, 0.5, 0.5)
+                rotation: (90, 0, 0)
+                length: 0.3
+            -
+                position: (-1, 0.5, 0.5)
+                rotation: (90, 0, 0)
+                length: 0.3
+            -
+                position: (0, 0.5, 0.5)
+                rotation: (90, 0, 0)
+                length: 0.3
+    logicCode: wireless.Server.Components.receiver

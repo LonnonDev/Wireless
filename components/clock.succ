@@ -1,0 +1,9 @@
+Clock:
+    column: "Transmitters/Recievers"
+    prefab:
+        blocks:
+            -
+                scale: (1, 1, 1)
+                position: (0, 0, 0)
+                color: 5e5eff
+    logicCode: wireless.Server.Components.clock
