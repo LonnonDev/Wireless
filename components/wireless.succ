@@ -1,5 +1,5 @@
 Transmitter:
-    column: "Transmitters/Recievers"
+    column: "wireless"
     prefab:
         blocks:
             -
@@ -34,7 +34,7 @@ Transmitter:
     logicCode: wireless.Server.Components.transmitter
 
 Reciever:
-    column: "Transmitters/Recievers"
+    column: "wireless"
     prefab:
         blocks:
             -

@@ -1,5 +1,5 @@
 Clock:
-    column: "Transmitters/Recievers"
+    column: "wireless"
     prefab:
         blocks:
             -

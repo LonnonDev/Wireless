@@ -1,0 +1,5 @@
+ComponentColumn.wireless: "Transmitters/Recievers"
+
+wireless.Reciever: "Receiver"
+wireless.Transmitter: "Transmitter"
+wireless.Clock: "PLACE THIS DOWN OR NOTHING WILL WORK"
